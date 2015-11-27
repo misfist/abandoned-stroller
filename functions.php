@@ -1,5 +1,22 @@
 <?php
 
+/*
+ * Hybrid Core Framework
+ */
+
+// Get the template directory and make sure it has a trailing slash.
+$hybrid_base_dir = trailingslashit( get_template_directory() );
+
+// Load the Hybrid Core framework and theme files.
+require_once( $hybrid_base_dir . 'library/hybrid.php' );
+require_once( $hybrid_base_dir . 'inc/theme.php' );
+
+new Hybrid();
+
+/*
+ * Timber Templating
+ */
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';

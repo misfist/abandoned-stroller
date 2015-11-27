@@ -1,0 +1,28 @@
+{
+  "name": "misfist-network-theme",
+  "homepage": "https://github.com/misfist/misfist-network-theme",
+  "authors": [
+    "Pea <pea@misfist.com>"
+  ],
+  "description": "Wordpress theme built with Twig/Timber, Hybrid Core, Bourbon, Neat and REST API.",
+  "main": "index.php",
+  "moduleType": [],
+  "keywords": [
+    "wordpress",
+    "theme",
+    "twig",
+    "bourbon",
+    "sass",
+    "rest-api"
+  ],
+  "license": "GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ]
+}

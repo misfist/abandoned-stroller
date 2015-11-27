@@ -1,6 +1,6 @@
 {
-  "name": "upstatement/timber-starter-theme",
-  "description": "Starter theme to build a Timber theme",
+  "name": "misfist/misfist-network-theme",
+  "description": "Wordpress theme built with Twig/Timber, Hybrid Core, Bourbon, Neat and REST API.",
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "authors": [
@@ -18,7 +18,7 @@
   	}
 	},
   "require": {
-	  "wpackagist-plugin/timber-library": "0.21.*"
+	  "wpackagist-plugin/timber-library": ">=0.21.0"
   },
   "repositories": [
     {
