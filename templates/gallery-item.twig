@@ -1,0 +1,28 @@
+<figure class="gallery-item grid" id="post-{{post.ID}}">
+	{% block content %}
+		{% if post.get_thumbnail %}
+			 <img src="{{post.thumbnail.src|resize(300, 300)}}" alt="{{ post.thumbnail._wp_attachment_image_alt ? post.thumbnail._wp_attachment_image_alt : post.post_title }}" />
+                {% if post.thumbnail.caption %}
+                    <figcaption>
+                        <span class="image-caption">
+                            {{ post.thumbnail.caption }}
+                        </span>
+
+                    {% if post.thumbnail.post_content %}
+                        <span class="image-description">{{ post.thumbnail.post_content }}</span>
+                    {% endif %}
+
+                    </figcaption>
+                {% endif %}
+		{% endif %}
+	{% endblock %}
+    
+    <div class="tags">
+        <ul class="tag-list">
+        {% for term in post.terms( 'tags' ) %}
+            <li><a href="{{ term.link }}">{{ term.slug }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+
+</figure>

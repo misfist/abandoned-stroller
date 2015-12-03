@@ -1,9 +1,10 @@
 <?php
 
-/*
- * Theme Functions
+/**
+ * Theme Initialization Functions
+ *
+ * @package Misfist Network Theme
  */
-
 
 # Theme setup
 add_action( 'after_setup_theme', 'misfist_theme_setup', 5 );
@@ -52,7 +53,7 @@ if ( ! function_exists( 'misfist_theme_setup' ) ) {
         add_theme_support( 'custom-header' );
 
         // Add theme support for Translation
-        load_theme_textdomain( 'glocal', get_template_directory() . '/library/language' );  
+        load_theme_textdomain( 'abandoned-stroller', get_template_directory() . '/library/language' );  
 
         // Loop Pagination
         // Provides a template tag for adding pagination to multi-post pages (e.g., archives, blog, search)
@@ -72,9 +73,9 @@ if ( ! function_exists( 'misfist_theme_setup' ) ) {
  */
 function misfist_theme_register_image_sizes() {
 
-    add_image_size( 'bones-thumb-600', 600, 150, true );
-    add_image_size( 'bones-thumb-300', 300, 100, true );
-    add_image_size( 'bones-thumb-150', 150, 150, true );
+    add_image_size( '600', 600, 150, true );
+    add_image_size( '300', 300, 100, true );
+    add_image_size( '150', 150, 150, true );
 
 }
 
@@ -86,9 +87,9 @@ function misfist_theme_register_image_sizes() {
  * @return void
  */
 function misfist_theme_register_menus() {
-    register_nav_menu( 'primary',    esc_html_x( 'Primary',    'nav menu location', 'anp-main-theme' ) );
-    register_nav_menu( 'secondary',  esc_html_x( 'Secondary',  'nav menu location', 'anp-main-theme' ) );
-    register_nav_menu( 'subsidiary', esc_html_x( 'Subsidiary', 'nav menu location', 'anp-main-theme' ) );
+    register_nav_menu( 'primary',    esc_html_x( 'Primary',    'nav menu location', 'abandoned-stroller' ) );
+    register_nav_menu( 'secondary',  esc_html_x( 'Secondary',  'nav menu location', 'abandoned-stroller' ) );
+    register_nav_menu( 'subsidiary', esc_html_x( 'Subsidiary', 'nav menu location', 'abandoned-stroller' ) );
 }
 
 /**
@@ -100,9 +101,9 @@ function misfist_theme_register_menus() {
  */
 function misfist_theme_register_layouts() {
 
-    hybrid_register_layout( '1c',   array( 'label' => esc_html__( '1 Column',                     'anp-main-theme' ), 'image' => '%s/images/layouts/1c.png'   ) );
-    hybrid_register_layout( '2c-l', array( 'label' => esc_html__( '2 Columns: Content / Sidebar', 'anp-main-theme' ), 'image' => '%s/images/layouts/2c-l.png' ) );
-    hybrid_register_layout( '2c-r', array( 'label' => esc_html__( '2 Columns: Sidebar / Content', 'anp-main-theme' ), 'image' => '%s/images/layouts/2c-r.png' ) );
+    hybrid_register_layout( '1c',   array( 'label' => esc_html__( '1 Column',                     'abandoned-stroller' ), 'image' => '%s/images/layouts/1c.png'   ) );
+    hybrid_register_layout( '2c-l', array( 'label' => esc_html__( '2 Columns: Content / Sidebar', 'abandoned-stroller' ), 'image' => '%s/images/layouts/2c-l.png' ) );
+    hybrid_register_layout( '2c-r', array( 'label' => esc_html__( '2 Columns: Sidebar / Content', 'abandoned-stroller' ), 'image' => '%s/images/layouts/2c-r.png' ) );
 }
 
 /**
@@ -118,56 +119,56 @@ function misfist_theme_register_layouts() {
     hybrid_register_sidebar(
         array(
             'id'          => 'sidebar1',
-            'name'        => esc_html_x( 'Primary', 'sidebar', 'anp-main-theme' ),
-            'description' => esc_html__( '', 'anp-main-theme' )
+            'name'        => esc_html_x( 'Primary', 'sidebar', 'abandoned-stroller' ),
+            'description' => esc_html__( '', 'abandoned-stroller' )
         )
     );
 
     hybrid_register_sidebar(
         array(
             'id'          => 'home-modules',
-            'name'        => esc_html_x( 'Homepage Modules', 'sidebar', 'anp-main-theme' ),
-            'description' => esc_html__( 'Modules for the Homepage', 'anp-main-theme' )
+            'name'        => esc_html_x( 'Homepage Modules', 'sidebar', 'abandoned-stroller' ),
+            'description' => esc_html__( 'Modules for the Homepage', 'abandoned-stroller' )
         )
     );
 
     hybrid_register_sidebar(
         array(
             'id'          => 'footer1',
-            'name'        => esc_html_x( 'Footer 1', 'anp-main-theme' ),
-            'description' => esc_html_x( 'First footer widget area.', 'anp-main-theme' )
+            'name'        => esc_html_x( 'Footer 1', 'abandoned-stroller' ),
+            'description' => esc_html_x( 'First footer widget area.', 'abandoned-stroller' )
         )
     );
 
     hybrid_register_sidebar(
         array(
             'id'          => 'footer2',
-            'name'        => esc_html_x( 'Footer 2', 'anp-main-theme' ),
-            'description' => esc_html_x( 'Second footer widget area.', 'anp-main-theme' )
+            'name'        => esc_html_x( 'Footer 2', 'abandoned-stroller' ),
+            'description' => esc_html_x( 'Second footer widget area.', 'abandoned-stroller' )
         )
     );
 
     hybrid_register_sidebar(
         array(
             'id'          => 'footer3',
-            'name'        => esc_html_x( 'Footer 3', 'anp-main-theme' ),
-            'description' => esc_html_x( 'Third footer widget area.', 'anp-main-theme' )
+            'name'        => esc_html_x( 'Footer 3', 'abandoned-stroller' ),
+            'description' => esc_html_x( 'Third footer widget area.', 'abandoned-stroller' )
         )
     );
 
     hybrid_register_sidebar(
         array(
             'id'          => 'footer4',
-            'name'        => esc_html_x( 'Footer 4', 'anp-main-theme' ),
-            'description' => esc_html_x( 'Fourth footer widget area.', 'anp-main-theme' )
+            'name'        => esc_html_x( 'Footer 4', 'abandoned-stroller' ),
+            'description' => esc_html_x( 'Fourth footer widget area.', 'abandoned-stroller' )
         )
     );
 
     hybrid_register_sidebar(
         array(
             'id' => 'social',
-            'name' => __( 'Social Widget', 'anp-main-theme' ),
-            'description' => __( 'Widget area for social links.', 'anp-main-theme' )
+            'name' => __( 'Social Widget', 'abandoned-stroller' ),
+            'description' => __( 'Widget area for social links.', 'abandoned-stroller' )
         )
     );
 
@@ -180,33 +181,7 @@ function misfist_theme_register_layouts() {
  * @access public
  * @return void
  */
-function misfist_theme_enqueue_scripts() {
-
-    if( is_page_template( 'page-directory.php' ) ) {
-        // Deregister WP jquery
-        wp_deregister_script( 'jquery' );
-        // wp_deregister_script( 'jquery-ui-draggable' );
-
-        // Hosted jquery
-        // wp_register_script( 'jquery', 'http://code.jquery.com/jquery-latest.js', array(), '', true );
-        wp_register_script( 'jquery', 'http://code.jquery.com/jquery-latest.js', false, null);
-
-        // Enqueue style
-        wp_enqueue_script( 'jquery' );
-    }
-
-    wp_register_script( 'responsive-slider-script', get_template_directory_uri() . '/assets/boxslider/jquery.bxslider.min.js', array( 'jquery' ), '', true );
-
-    wp_register_script( 'slider-init', get_template_directory_uri() . '/assets/scripts/sliderInit.js', array( 'jquery' ), '', true );
-
-    wp_register_script( 'isotope-script', get_template_directory_uri() . '/assets/scripts/isotope.pkgd.min.js', array( 'jquery' ), '', true );
-
-    wp_enqueue_script( 'responsive-slider-script' );
-    wp_enqueue_script( 'slider-init' );
-    wp_enqueue_script( 'isotope-script' );
-
-    
-}
+function misfist_theme_enqueue_scripts() {}
 
 /**
  * Load stylesheets for the front end.
@@ -218,7 +193,7 @@ function misfist_theme_enqueue_scripts() {
 function misfist_theme_enqueue_styles() {
 
     // Load one-five base style.
-    wp_enqueue_style( 'hybrid-one-five' );
+    //wp_enqueue_style( 'hybrid-one-five' );
 
     // Load gallery style if 'cleaner-gallery' is active.
     if ( current_theme_supports( 'cleaner-gallery' ) )
@@ -229,16 +204,12 @@ function misfist_theme_enqueue_styles() {
         wp_enqueue_style( 'hybrid-parent' );
 
     // Load active theme stylesheet.
-    wp_enqueue_style( 'hybrid-style' );
+    //wp_enqueue_style( 'hybrid-style' );
 
 
-    wp_register_style( 'responsive-slider-stylesheet', get_template_directory_uri() . '/assets/boxslider/jquery.bxslider.css');
+    wp_register_style( 'abandoned-stroller-style', get_template_directory_uri() . '/assets/styles/style.css');
 
-    wp_enqueue_style( 'responsive-slider-stylesheet' );
-
-    wp_register_style( 'anp-civicrm', get_template_directory_uri() . '/assets/styles/plugins/civicrm.css');
-
-    wp_enqueue_style( 'anp-civicrm' );
+    wp_enqueue_style( 'abandoned-stroller-style' );
 
 }
 

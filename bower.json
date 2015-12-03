@@ -1,6 +1,6 @@
 {
-  "name": "misfist-network-theme",
-  "homepage": "https://github.com/misfist/misfist-network-theme",
+  "name": "abandoned-stroller-theme",
+  "homepage": "https://github.com/misfist/abandoned-stroller-theme",
   "authors": [
     "Pea <pea@misfist.com>"
   ],
@@ -24,5 +24,8 @@
     "assets/vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "masonry": "~3.3.2"
+  }
 }

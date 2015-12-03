@@ -2,8 +2,24 @@
 
 {% block content %}
 	<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
+        {{ post|print_r }}
 		<p>{{post.get_preview(25)}}</p>
 		{% if post.thumbnail.src %}
-			<img src="{{post.thumbnail.src}}" />
+
+            <figure >
+    			<img src="{{post.thumbnail.src|resize(300, 300)}}" alt="{{ post.thumbnail._wp_attachment_image_alt ? post.thumbnail._wp_attachment_image_alt : post.post_title }}" />
+                {% if post.thumbnail.caption %}
+                    <figcaption>
+                        <span class="image-caption">
+                            {{ post.thumbnail.caption }}
+                        </span>
+
+                    {% if post.thumbnail.post_content %}
+                        <span class="image-description">{{ post.thumbnail.post_content }}</span>
+                    {% endif %}
+
+                    </figcaption>
+                {% endif %}
+            </figure>
 		{% endif %}
 {% endblock %}

@@ -9,7 +9,10 @@ $hybrid_base_dir = trailingslashit( get_template_directory() );
 
 // Load the Hybrid Core framework and theme files.
 require_once( $hybrid_base_dir . 'library/hybrid.php' );
+
 require_once( $hybrid_base_dir . 'inc/theme.php' );
+
+require_once( $hybrid_base_dir . 'inc/theme-functions.php' );
 
 new Hybrid();
 
@@ -26,7 +29,7 @@ if ( ! class_exists( 'Timber' ) ) {
 
 Timber::$dirname = array('templates', 'views');
 
-class StarterSite extends TimberSite {
+class MisfistSite extends TimberSite {
 
 	function __construct() {
 		add_theme_support( 'post-formats' );
@@ -34,8 +37,8 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'menus' );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		// add_action( 'init', array( $this, 'register_post_types' ) );
+		// add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
 	}
 
@@ -49,7 +52,6 @@ class StarterSite extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
@@ -65,7 +67,7 @@ class StarterSite extends TimberSite {
 
 }
 
-new StarterSite();
+new MisfistSite();
 
 function myfoo( $text ) {
 	$text .= ' bar!';
