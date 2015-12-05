@@ -2,7 +2,9 @@
 
 {% block content %}
     <h2>{{ __( 'Where Have all The Children Gone?', 'abandoned-stroller' ) }}</h2>
-    {% for post in posts %}
-        {% include ['gallery-item.twig', 'tease.twig'] %}
-    {% endfor %}
+    <div class="grid">
+        {% for post in posts %}
+            {% include ['gallery-item.twig', 'tease.twig'] %}
+        {% endfor %}
+    </div>
 {% endblock %}

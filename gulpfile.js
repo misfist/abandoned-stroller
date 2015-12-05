@@ -26,7 +26,7 @@ var onError = function( err ) {
 
 var paths = {
     /* Source paths */
-    styles: ['./src/styles/style.scss'],
+    styles: ['./src/styles/**/*.scss'],
     scripts: [
         './src/scripts/*',
         './src/vendor/js/*'

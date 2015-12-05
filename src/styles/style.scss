@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 /*
- * Theme Name: Misfist Network Theme
+ * Theme Name: Misfist Network Theme!
  * Theme URI: https://github.com/misfist/abandoned-stroller-theme
  * Description: Wordpress theme built with Twig/Timber, Hybrid Core, Bourbon, Neat and REST API.
  * Author: Pea
@@ -37,11 +37,14 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/grid';
 
 // 5. Components
 @import
-  'components/buttons';
+  'components/buttons',
+  'components/meta',
+  'components/lists';
 
 // 6. Page-specific styles
 @import

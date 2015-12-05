@@ -1,28 +1,32 @@
-<figure class="gallery-item grid" id="post-{{post.ID}}">
-	{% block content %}
-		{% if post.get_thumbnail %}
-			 <img src="{{post.thumbnail.src|resize(300, 300)}}" alt="{{ post.thumbnail._wp_attachment_image_alt ? post.thumbnail._wp_attachment_image_alt : post.post_title }}" />
-                {% if post.thumbnail.caption %}
-                    <figcaption>
-                        <span class="image-caption">
-                            {{ post.thumbnail.caption }}
-                        </span>
+{% if post.get_thumbnail %}
+    <a href="{{post.thumbnail.src}}" class="item">
+        <figure class="grid-item {{post.class}}" id="post-{{post.ID}}">
+
+           {% block content %}
+
+            <img src="{{post.thumbnail.src|resize(300, 300)}}" alt="{{ post.thumbnail._wp_attachment_image_alt ? post.thumbnail._wp_attachment_image_alt : post.post_title }}" />
+            {% if post.thumbnail.caption %}
+                <figcaption>
+                    <span class="image-caption">
+                        {{post.thumbnail.caption}}
+                    </span>
 
                     {% if post.thumbnail.post_content %}
-                        <span class="image-description">{{ post.thumbnail.post_content }}</span>
+                        <span class="image-description">{{post.thumbnail.post_content}}</span>
                     {% endif %}
 
-                    </figcaption>
-                {% endif %}
-		{% endif %}
-	{% endblock %}
-    
-    <div class="tags">
-        <ul class="tag-list">
-        {% for term in post.terms( 'tags' ) %}
-            <li><a href="{{ term.link }}">{{ term.slug }}</a></li>
-        {% endfor %}
-        </ul>
-    </div>
+                </figcaption>
+            {% endif %}
 
-</figure>
+            {% if post.terms( 'tags' ) %}
+                <ul class="meta tag-list"><i class="fa fa-tags"></i>
+                    {% for term in post.terms( 'tags' ) %}
+                        <li><a href="{{ term.link }}">{{term.slug}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endblock %}
+
+    </figure>
+</a>
+{% endif %}
