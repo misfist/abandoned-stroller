@@ -2,15 +2,11 @@
 // This file contains all styles related to lists.
 // -----------------------------------------------------------------------------
 
-.tag-list,
-.image-caption,
-.image-description {
+figure {
     font-size: .85rem;
     color: $dark-grey;
 }
 
-.image-caption {}
-
-.fa {
-    color: $mid-grey;
+.category-list {
+    float: right;
 }

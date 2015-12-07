@@ -1,32 +1,38 @@
 {% if post.get_thumbnail %}
-    <a href="{{post.thumbnail.src}}" class="item">
-        <figure class="grid-item {{post.class}}" id="post-{{post.ID}}">
 
-           {% block content %}
+    <figure class="grid-item {{post.class}}" id="post-{{post.ID}}">
 
+     {% block content %}
+
+        <a href="{{post.thumbnail.src}}" class="item">
             <img src="{{post.thumbnail.src|resize(300, 300)}}" alt="{{ post.thumbnail._wp_attachment_image_alt ? post.thumbnail._wp_attachment_image_alt : post.post_title }}" />
-            {% if post.thumbnail.caption %}
-                <figcaption>
-                    <span class="image-caption">
-                        {{post.thumbnail.caption}}
-                    </span>
+        </a>
 
-                    {% if post.thumbnail.post_content %}
-                        <span class="image-description">{{post.thumbnail.post_content}}</span>
-                    {% endif %}
+        {% if post.thumbnail.caption %}
+            <figcaption>
 
-                </figcaption>
-            {% endif %}
+                <span class="meta image-caption">
+                    {{post.thumbnail.caption}}
+                </span>
 
-            {% if post.terms( 'tags' ) %}
-                <ul class="meta tag-list"><i class="fa fa-tags"></i>
-                    {% for term in post.terms( 'tags' ) %}
-                        <li><a href="{{ term.link }}">{{term.slug}}</a></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endblock %}
+                {% if post.thumbnail.post_content %}
+                    <span class="meta image-description">{{post.thumbnail.post_content}}</span>
+                {% endif %}
+
+            </figcaption>
+        {% endif %}
+
+        <footer class="meta">
+            {% for term in post.terms( 'category' ) %}
+                {% if 'contributed' == term.slug %}
+                    <ul class="meta category-list">
+                        <li><i class="fa fa-trophy"></i> {{term.title}}</li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </footer>
+
+    {% endblock %}
 
     </figure>
-</a>
 {% endif %}

@@ -5,3 +5,26 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
+
+
+h1,
+h2,
+h3 {
+    font-family: $heading-font-stack;
+    color: $white;
+
+    a,
+    a:hover,
+    a:focus {
+        color: $white;
+    }
+}
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+

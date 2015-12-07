@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to form.
+// -----------------------------------------------------------------------------
+
+
+.ccf-form {
+    color: $white;
+
+    .form-title {
+        display: none;
+    } 
+    .required {
+        color: $white;
+    }
+}
+
+.ccf-form-wrapper .field label span.required {
+    color: $white;
+}
+

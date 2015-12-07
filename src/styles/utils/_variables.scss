@@ -3,12 +3,13 @@
 // -----------------------------------------------------------------------------
 
 
-
-
-
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Open Sans Condensed', 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Heading font family
+/// @type List
+$heading-font-stack: 'Amatic SC', $text-font-stack;
 
 /// Code (monospace) font family
 /// @type List
@@ -23,7 +24,11 @@ $text-color: #333 !default;
 
 /// Main brand color
 /// @type Color
-$primary-color: #E50050 !default;
+$primary-color: #282A26 !default;
+
+$secondary-color: #990100 !default;
+
+$tertiary-color: #352F31 !default;
 
 /// Light grey
 $light-grey: #EDEDED !default;

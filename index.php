@@ -19,7 +19,9 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 
-$args = 'numberposts=-1';
+$args = array(
+    'numberposts' => 500
+);
 $context['posts'] = Timber::get_posts( $args );
 
 $templates = array( 'index.twig' );

@@ -2,3 +2,33 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+
+body {
+    background: $black url(../images/streetlight4.jpg) top center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    color: $white;
+}
+
+a {
+    color: $white;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.grid-item {
+    background-color: $white;
+
+    &.category-contributed {
+        background-color: $secondary-color;
+        color: $white;
+
+        a:hover,
+        a:focus {
+            color: $white;
+        }
+    }
+}

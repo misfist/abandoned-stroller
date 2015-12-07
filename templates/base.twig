@@ -13,7 +13,12 @@
 					<h1 class="hdr-logo" role="banner">
 						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
+					<h2 class="hdr-tagline">
+						{{site.description}}
+					</h2>
+				</div>
+				<nav id="nav-main" class="nav-main" role="navigation">
+					<div class="wrapper">
 						<ul class="nav">
 						{% for item in menu.get_items %}
 							<li class="nav-item {{item.classes | join(' ')}}">
@@ -30,11 +35,10 @@
 							</li>
 						{% endfor %}
 						</ul>
-					</nav><!-- #nav -->
-				</div>
+					</div>
+				</nav><!-- #nav -->
 			{% endblock %}
 		</header>
-
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}

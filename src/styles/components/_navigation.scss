@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to navigation.
+// -----------------------------------------------------------------------------
+
+.nav-main {
+
+    background-color: $primary-color;
+
+    .wrapper {
+        margin-top: 1em;
+        margin-bottom: 1em;        
+    }
+
+    li {
+        padding: .25em .5em;
+        max-width: 120px;
+        background-color: $secondary-color;
+        text-transform: uppercase;
+        text-align: center;
+        &:hover,
+        &:focus {
+            background-color: $tertiary-color;
+        }
+    }
+
+    a {
+        display: block;
+        color: $white;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
