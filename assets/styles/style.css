@@ -786,6 +786,9 @@ input[type="submit"] {
 .ccf-form-wrapper .field label span.required {
   color: #fff; }
 
+.update-nag {
+  display: none; }
+
 figure {
   font-size: .85rem;
   color: #444; }
