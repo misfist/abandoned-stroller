@@ -12,6 +12,10 @@
     .required {
         color: $white;
     }
+
+    input[type="text"] {
+        color: $text-color;
+    }
 }
 
 .ccf-form-wrapper .field label span.required {

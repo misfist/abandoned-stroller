@@ -780,6 +780,8 @@ input[type="submit"] {
     display: none; }
   .ccf-form .required {
     color: #fff; }
+  .ccf-form input[type="text"] {
+    color: #333; }
 
 .ccf-form-wrapper .field label span.required {
   color: #fff; }
