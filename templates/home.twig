@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {{template_uri}}
+    {{url}}
     <div class="grid">
         {% for post in posts %}
             {% include ['gallery-item.twig', 'tease.twig'] %}
