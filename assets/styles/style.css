@@ -801,6 +801,10 @@ figure {
     .nav-main a:hover, .nav-main a:focus {
       text-decoration: none; }
 
+.featherlight .featherlight-previous,
+.featherlight .featherlight-next {
+  display: none; }
+
 .tag-list li {
   display: inline; }
 
