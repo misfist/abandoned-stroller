@@ -24,10 +24,6 @@ $args = array(
 );
 $context['posts'] = Timber::get_posts( $args );
 
-$context['stylesheet_uri'] = get_stylesheet_directory_uri();
-$context['stylesheet_dir'] = get_stylesheet_directory();
-$context['url'] = site_url();
-
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );

@@ -24,8 +24,10 @@
   'vendor/normalize',
   'vendor/bourbon/app/assets/stylesheets/bourbon',
   'vendor/neat/app/assets/stylesheets/neat',
-  'vendor/bitters/base',
+  'vendor/bitters/base';
+  /* Temporarily load font awesome from CDN until bedrock/multi-site cross origin issues are worked out
   'vendor/font-awesome/scss/font-awesome';
+  */
 
 // 3. Base stuff
 @import

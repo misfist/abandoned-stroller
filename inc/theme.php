@@ -223,6 +223,9 @@ function misfist_theme_enqueue_styles() {
 
     wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Open+Sans+Condensed:300,300italic,700' );
 
+    // Temporarily load font awesome from CDN until bedrock/multi-site cross origin issues are worked out
+    wp_register_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
+
     wp_register_style( 'abandoned-stroller-style', trailingslashit( get_template_directory_uri() ) . 'assets/styles/style.css');
 
     wp_register_style( 'light-box', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.min.css');
