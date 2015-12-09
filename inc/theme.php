@@ -183,17 +183,19 @@ function misfist_theme_register_layouts() {
  */
 function misfist_theme_enqueue_scripts() {
 
+
     wp_register_script( 'main', trailingslashit( get_template_directory_uri() ) . 'assets/scripts/main.js', array( 'jquery' ), '', true );
 
     wp_register_script( 'light-box', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.min.js', array( 'jquery' ), '', true );
 
     wp_register_script( 'light-box-gallery', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.gallery.min.js', array( 'jquery' ), '', true );
 
-    wp_enqueue_script( 'main' );
+    
 
     if( is_front_page() ) {
         wp_enqueue_script( 'light-box' );
         wp_enqueue_script( 'light-box-gallery' );
+        wp_enqueue_script( 'main' );
     }
 
 }
