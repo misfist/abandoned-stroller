@@ -226,11 +226,11 @@ function misfist_theme_enqueue_styles() {
     // Temporarily load font awesome from CDN until bedrock/multi-site cross origin issues are worked out
     wp_register_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
 
-    wp_register_style( 'abandoned-stroller-style', trailingslashit( get_template_directory_uri() ) . 'assets/styles/style.min.css');
+    wp_register_style( 'abandoned-stroller-style', trailingslashit( get_template_directory_uri() ) . 'assets/styles/style.css', array( 'font-awesome' ), '', 'all' );
 
-    wp_register_style( 'light-box', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.min.css');
+    wp_register_style( 'light-box', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.min.css' );
 
-    wp_register_style( 'light-box', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.gallery.min.css');
+    wp_register_style( 'light-box', trailingslashit( get_template_directory_uri() ) . 'assets/vendor/featherlight/release/featherlight.gallery.min.css' );
 
     wp_enqueue_style( 'google-fonts' );
     wp_enqueue_style( 'abandoned-stroller-style' );
