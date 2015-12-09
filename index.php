@@ -24,6 +24,8 @@ $args = array(
 );
 $context['posts'] = Timber::get_posts( $args );
 
+$context['template_uri'] = get_template_directory_uri();
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );

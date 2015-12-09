@@ -1,6 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
+
+    {{template_uri}}
     <div class="grid">
         {% for post in posts %}
             {% include ['gallery-item.twig', 'tease.twig'] %}
